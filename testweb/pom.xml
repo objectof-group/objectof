@@ -67,12 +67,12 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-repo</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-corc.jee</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -89,7 +89,7 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-derived</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -105,7 +105,7 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-connector</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 	</dependencies>
 </project>

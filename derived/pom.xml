@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>objectof</groupId>
 	<artifactId>objectof-derived</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<name>objectof derived</name>
 	<packaging>jar</packaging>
 	<properties>
@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>objectof</groupId>
 		<artifactId>objectof</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.1.1</version>
 	</parent>
 	
 	<build>
@@ -36,12 +36,12 @@
 					<dependency>
 						<groupId>objectof</groupId>
 						<artifactId>objectof-model</artifactId>
-						<version>0.2-SNAPSHOT</version>
+						<version>0.1.1</version>
 					</dependency>
 				</dependencies>
 				<groupId>objectof</groupId>
 				<artifactId>objectof-maven-plugin</artifactId>
-				<version>0.2-SNAPSHOT</version>
+				<version>0.1.1</version>
 				<configuration>
 					<file>GenerationContext.xml</file>
 				</configuration>
@@ -70,12 +70,12 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-model</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-maven-plugin</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.1</version>
 			<type>maven-plugin</type>
 		</dependency>
 	</dependencies>
