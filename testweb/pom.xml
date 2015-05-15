@@ -37,7 +37,7 @@
 			<plugin>
 				<groupId>objectof</groupId>
 				<artifactId>objectof-maven-plugin</artifactId>
-				<version>0.2-SNAPSHOT</version>
+				<version>0.1.1</version>
 				<configuration>
 					<file>GenerationContext.xml</file>
 				</configuration>
@@ -57,7 +57,7 @@
 					<dependency>
 						<groupId>objectof</groupId>
 						<artifactId>objectof-model</artifactId>
-						<version>0.2-SNAPSHOT</version>
+						<version>0.1.1</version>
 					</dependency>
 				</dependencies>
 			</plugin>
