@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>objectof</groupId>
 	<artifactId>objectof-web</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.1.2</version>
 	<name>objectof web</name>
 	<packaging>jar</packaging>
 	<properties>
@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>objectof</groupId>
 		<artifactId>objectof</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.1.2</version>
 	</parent>
 
 	<build>
@@ -37,12 +37,12 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-corc.jee</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-model</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-connector</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.2</version>
 		</dependency>
 	</dependencies>
 </project>
