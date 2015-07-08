@@ -40,7 +40,7 @@
 		<module>corc</module>
 		<module>corc-jee</module>
 		<module>core</module>
-		<module>derived</module>
+		
 		<module>maven</module>
 		<module>model</module>
 		<module>repo</module>
