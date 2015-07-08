@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<schema id='test.schemaspy.actof.objectof.org:201401/schema.person' version='0.0.1-SNAPSHOT'
+<schema id='test.objectof.org:201401/schema.person' version='0.0.1-SNAPSHOT'
   xmlns='---ans://objectof.net:1401/tbd---'
   xmlns:model='ans://objectof.net:1401/facets/model'
   xmlns:ui='ans://objectof.net:1401/facets/ui'
