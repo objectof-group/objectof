@@ -1,5 +1,0 @@
-{
-#foreach($nm in $a.PropertyNames)
-    "$nm": "${a.getProperty($nm).Source}"
-#end
-}
