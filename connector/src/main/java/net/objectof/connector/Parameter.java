@@ -11,6 +11,10 @@ public class Parameter {
     private String title;
     private Hint hint;
 
+    public Parameter() {
+        this("", null);
+    }
+
     public Parameter(String title) {
         this(title, null);
     }
