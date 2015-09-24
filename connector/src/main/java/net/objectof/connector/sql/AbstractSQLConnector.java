@@ -15,6 +15,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.w3c.dom.Document;
+
 import net.objectof.connector.AbstractConnector;
 import net.objectof.connector.Connector;
 import net.objectof.connector.ConnectorException;
@@ -27,8 +29,6 @@ import net.objectof.model.impl.facets.ISourcePackage;
 import net.objectof.repo.impl.rip.IRip;
 import net.objectof.repo.impl.sql.ISqlDb;
 import net.objectof.repo.impl.sqlite.ISQLite;
-
-import org.w3c.dom.Document;
 
 
 public abstract class AbstractSQLConnector extends AbstractConnector implements Connector {
@@ -46,8 +46,8 @@ public abstract class AbstractSQLConnector extends AbstractConnector implements 
 
     public boolean isContainerEmpty() throws ConnectorException {
         if (isDatabaseCreatable()) { return true; }
-        List<String> allowedTypes = new ArrayList<>(Arrays.asList("SYSTEM TABLE", "SYSTEM INDEX", "SYSTEM TOAST INDEX",
-                "SYSTEM VIEW"));
+        List<String> allowedTypes = new ArrayList<>(
+                Arrays.asList("SYSTEM TABLE", "SYSTEM INDEX", "SYSTEM TOAST INDEX", "SYSTEM VIEW"));
         try {
             Connection conn = getDataSource().getConnection();
             ResultSet res = conn.getMetaData().getTables(null, null, null, null);
@@ -74,6 +74,7 @@ public abstract class AbstractSQLConnector extends AbstractConnector implements 
 
     @Override
     public boolean hasPackage(String name) throws ConnectorException {
+        if (isContainerEmpty()) { return false; }
         return getPackageNames().contains(name);
     }
 
