@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>objectof</groupId>
 	<artifactId>objectof-repo</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.1.3</version>
 	<name>objectof repo</name>
 	<packaging>jar</packaging>
 	<properties>
@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>objectof</groupId>
 		<artifactId>objectof</artifactId>
-		<version>0.2-SNAPSHOT</version>
+		<version>0.1.3</version>
 	</parent>
 
 	<build>
@@ -38,18 +38,12 @@
 		<dependency>
 			<groupId>objectof</groupId>
 			<artifactId>objectof-model</artifactId>
-			<version>0.2-SNAPSHOT</version>
+			<version>0.1.3</version>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.1-901-1.jdbc4</version>
-		</dependency>
-		<dependency>
-			<groupId>objectof</groupId>
-			<artifactId>objectof-derived</artifactId>
-			<version>0.2-SNAPSHOT</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
