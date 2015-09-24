@@ -34,9 +34,14 @@ import net.objectof.repo.impl.sqlite.ISQLite;
 public abstract class AbstractSQLConnector extends AbstractConnector implements Connector {
 
     public static final String KEY_REPOSITORY = "Repository";
+    private DataSource datasource;
 
     public AbstractSQLConnector() {
         addParameter(KEY_REPOSITORY);
+    }
+
+    protected void onChange() {
+        datasource = null;
     }
 
     @Override
@@ -157,14 +162,27 @@ public abstract class AbstractSQLConnector extends AbstractConnector implements 
     }
 
     /**
-     * Returns a DataSource for this type of Connector. If this database is
-     * creatable (Connector{@link #isDatabaseCreatable()} is true, getDataSource
-     * should attempt to create it
+     * Returns a cached DataSource for this type of Connector.
      * 
      * @return a DataSource for this Connector
      * @throws ConnectorException
      */
-    protected abstract DataSource getDataSource() throws ConnectorException;
+    protected final DataSource getDataSource() throws ConnectorException {
+        if (datasource == null) {
+            datasource = connectDataSource();
+        }
+        return datasource;
+    }
+
+    /**
+     * Connects a DataSource for this type of Connector. If this database is
+     * creatable (Connector{@link #isDatabaseCreatable()} is true,
+     * connectDataSource should attempt to create it
+     * 
+     * @return a DataSource for this Connector
+     * @throws ConnectorException
+     */
+    protected abstract DataSource connectDataSource() throws ConnectorException;
 
     /**
      * Checks to see if the configured database is yet to be created. This only

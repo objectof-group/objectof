@@ -36,7 +36,7 @@ public class IMySQLConnector extends AbstractSQLConnector {
     }
 
     @Override
-    protected DataSource getDataSource() throws ConnectorException {
+    protected DataSource connectDataSource() throws ConnectorException {
         String serverString = "jdbc:mysql://" + value(KEY_SERVER) + "/" + value(KEY_DATABASE);
         return ISql.createPool(serverString, value(KEY_USERNAME), value(KEY_PASSWORD), "com.mysql.jdbc.Driver");
     }

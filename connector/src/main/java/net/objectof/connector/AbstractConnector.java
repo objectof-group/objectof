@@ -4,16 +4,18 @@ package net.objectof.connector;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import net.objectof.connector.Parameter.Hint;
 
 
-public abstract class AbstractConnector implements Connector {
+public abstract class AbstractConnector implements Connector, Consumer<String> {
 
     private String name = "";
     private List<Parameter> parameters = new ArrayList<>();
 
     protected void addParameter(Parameter param) {
+        param.addValueListener(this);
         parameters.add(param);
     }
 
@@ -68,4 +70,11 @@ public abstract class AbstractConnector implements Connector {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void accept(String value) {
+        onChange();
+    }
+
+    protected abstract void onChange();
 }

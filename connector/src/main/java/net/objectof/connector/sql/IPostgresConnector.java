@@ -36,7 +36,7 @@ public class IPostgresConnector extends AbstractSQLConnector {
     }
 
     @Override
-    protected DataSource getDataSource() throws ConnectorException {
+    protected DataSource connectDataSource() throws ConnectorException {
         String serverString = "jdbc:postgresql://" + value(KEY_SERVER) + "/" + value(KEY_DATABASE);
         return ISql.createPool(serverString, value(KEY_USERNAME), value(KEY_PASSWORD), "org.postgresql.Driver");
     }

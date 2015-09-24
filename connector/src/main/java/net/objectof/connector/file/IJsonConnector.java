@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import org.w3c.dom.Document;
+
 import net.objectof.aggr.Composite;
 import net.objectof.connector.AbstractConnector;
 import net.objectof.connector.Connector;
@@ -32,8 +34,6 @@ import net.objectof.model.query.Query;
 import net.objectof.model.query.QueryIterable;
 import net.objectof.model.query.QueryResolver;
 import net.objectof.model.query.Relation;
-
-import org.w3c.dom.Document;
 
 
 public class IJsonConnector extends AbstractConnector implements Connector {
@@ -95,6 +95,9 @@ public class IJsonConnector extends AbstractConnector implements Connector {
     public boolean hasPackage(String name) throws ConnectorException {
         return false;
     }
+
+    @Override
+    protected void onChange() {}
 }
 
 class IJsonPackage extends ISourcePackage {
@@ -201,8 +204,8 @@ class IJsonTransaction extends ITransaction {
     }
 
     @Override
-    public <T> Iterable<T> query(final String kind, Query query) throws IllegalArgumentException,
-            UnsupportedOperationException {
+    public <T> Iterable<T> query(final String kind, Query query)
+            throws IllegalArgumentException, UnsupportedOperationException {
         Set<String> labels = query.resolve(theLimit, getPackage(), kind, new QueryResolver() {
 
             @Override

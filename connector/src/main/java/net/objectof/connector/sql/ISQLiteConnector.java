@@ -8,6 +8,8 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.w3c.dom.Document;
+
 import net.objectof.connector.ConnectorException;
 import net.objectof.connector.Parameter.Hint;
 import net.objectof.model.Package;
@@ -15,8 +17,6 @@ import net.objectof.model.impl.IBaseMetamodel;
 import net.objectof.model.impl.IPackage;
 import net.objectof.model.impl.facets.ISourcePackage;
 import net.objectof.repo.impl.sqlite.ISQLite;
-
-import org.w3c.dom.Document;
 
 
 public class ISQLiteConnector extends AbstractSQLConnector {
@@ -43,7 +43,7 @@ public class ISQLiteConnector extends AbstractSQLConnector {
     }
 
     @Override
-    protected DataSource getDataSource() throws ConnectorException {
+    protected DataSource connectDataSource() throws ConnectorException {
         File file = new File(value(KEY_FILENAME));
         DataSource ds;
         try {

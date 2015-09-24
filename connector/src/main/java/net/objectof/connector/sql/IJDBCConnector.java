@@ -36,7 +36,7 @@ public class IJDBCConnector extends AbstractSQLConnector {
     }
 
     @Override
-    protected DataSource getDataSource() throws ConnectorException {
+    protected DataSource connectDataSource() throws ConnectorException {
         return ISql.createPool(value(KEY_URL), value(KEY_USERNAME), value(KEY_PASSWORD), value(KEY_DRIVER));
     }
 

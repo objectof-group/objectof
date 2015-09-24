@@ -1,6 +1,11 @@
 package net.objectof.connector;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
+
 public class Parameter {
 
     public enum Hint {
@@ -10,6 +15,7 @@ public class Parameter {
     private String value;
     private String title;
     private Hint hint;
+    private List<Consumer<String>> valueListeners = new ArrayList<>();
 
     public Parameter() {
         this("", null);
@@ -43,5 +49,13 @@ public class Parameter {
 
     public void setHint(Hint hint) {
         this.hint = hint;
+    }
+
+    public void addValueListener(Consumer<String> listener) {
+        valueListeners.add(listener);
+    }
+
+    public void removeValueListener(Consumer<String> listener) {
+        valueListeners.remove(listener);
     }
 }
