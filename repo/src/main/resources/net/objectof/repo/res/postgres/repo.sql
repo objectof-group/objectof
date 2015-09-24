@@ -18,7 +18,7 @@ create table blobs
 (
 	id bigint not null,
 	hash integer not null,
-	bytes blob not null,
+	bytes bytea not null,
 	constraint blobs_pk primary key (id)
 );
   
@@ -64,9 +64,7 @@ create table types
   path text not null,
   stereotype text not null,
   target smallint,
-  constraint types_pk 
-  primary key (id)
-  foreign key (target) references types(id)
+  constraint types_pk primary key (id)
 );
 
 create index types_stereotype_ix

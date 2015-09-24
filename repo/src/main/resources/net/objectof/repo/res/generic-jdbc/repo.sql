@@ -52,6 +52,5 @@ create table types
   path text not null,
   stereotype varchar(255) not null,
   target smallint,
-  constraint types_pk 
-  primary key (id)
+  constraint types_pk primary key (id)
 );
