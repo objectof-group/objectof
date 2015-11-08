@@ -1,6 +1,5 @@
 package net.objectof;
 
-
 /**
  * A Receiver can evaluate messages in a generic way. Subinterfaces provide the
  * means to interrogate a receiver's interface.
@@ -8,23 +7,42 @@ package net.objectof;
  * @author john
  *
  */
+@FunctionalInterface
 @Selector
 public interface Receiver {
 
-    /**
-     * 
-     * @param aSelector
-     *            The selector to route aMessage to the appropriate method or
-     *            function.
-     * @param aMessage
-     *            The message. Subinterfaces may place contracts on the message
-     *            content.
-     * @return The result of evaluation.
-     * @throws InvalidNameException
-     *             when aSelector isn't defined for this receiver.
-     * @throws EvaluationException
-     *             when aMessage cannot be evaluated.
-     */
-    @Selector("perform:with:")
-    public Object perform(String aSelector, Object... aMessage) throws InvalidNameException, EvaluationException;
+	public Object[] NOARGS = new Object[0];
+
+	/**
+	 * Given a message, perform a method/function.
+	 * 
+	 * @param aSelector
+	 *            The selector to route aArguments to the appropriate method or
+	 *            function.
+	 * @param aArguments
+	 *            The message arguments.
+	 * @return The evaluation output.
+	 * @throws InvalidNameException
+	 *             when aSelector isn't defined by this Receiver.
+	 * @throws EvaluationException
+	 *             when evaluation cannot be performed. All runtime exceptions
+	 *             from evaluation should be wrapped (as the target exception)
+	 *             in an EvaluationException.
+	 */
+	@Selector("perform:with:")
+	public Object perform(String aSelector, Object... aArguments) throws InvalidNameException, EvaluationException;
+
+	/**
+	 * Perform with no arguments. The default behavior should always be
+	 * performed.
+	 * 
+	 * @param aSelector
+	 *            The selector to route aArguments to the appropriate method or
+	 *            function.
+	 * @return The evaluation output.
+	 */
+	@Selector("perform")
+	default Object perform(String aSelector) {
+		return perform(aSelector, NOARGS);
+	}
 }

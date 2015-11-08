@@ -1,17 +1,16 @@
 package net.objectof;
 
-
 /**
- * Thrown when a selector isn't recognized.
+ * Thrown when a name isn't recognized.
  * 
  * @author jdh
  * 
  */
 public class InvalidNameException extends IllegalArgumentException {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public InvalidNameException(String aSelector) {
-        super(aSelector);
-    }
+	public InvalidNameException(String aName) {
+		super(aName);
+	}
 }
