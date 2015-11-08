@@ -1,10 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>objectof</groupId>
 	<artifactId>objectof-testweb</artifactId>
 	<packaging>war</packaging>
-	<version>0.2-SNAPSHOT</version>
 	<name>objectof testweb</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,33 +31,6 @@
 				<configuration>
 					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>objectof</groupId>
-				<artifactId>objectof-maven-plugin</artifactId>
-				<version>0.2-SNAPSHOT</version>
-				<configuration>
-					<file>GenerationContext.xml</file>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-						<version>1.1.3</version>
-					</dependency>
-					<dependency>
-						<groupId>objectof</groupId>
-						<artifactId>objectof-model</artifactId>
-						<version>0.2-SNAPSHOT</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
